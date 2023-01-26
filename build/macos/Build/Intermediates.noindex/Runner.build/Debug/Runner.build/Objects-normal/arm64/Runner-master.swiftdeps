@@ -1,0 +1,8 @@
+version: "Apple Swift version 5.7.2 (swiftlang-5.7.2.135.5 clang-1400.0.29.51)"
+options: "80046df148bd7e6b40460d956891108dd3068acbdd234f27760d82c9a08943f4"
+build_start_time: [1674660340, 286808013]
+build_end_time: [1674660353, 126016139]
+inputs:
+  "/Users/nguyenhuutuan/flutter-test/shopping-app/pos_test/macos/Flutter/GeneratedPluginRegistrant.swift": [1674660329, 88233232]
+  "/Users/nguyenhuutuan/flutter-test/shopping-app/pos_test/macos/Runner/AppDelegate.swift": [1671087040, 0]
+  "/Users/nguyenhuutuan/flutter-test/shopping-app/pos_test/macos/Runner/MainFlutterWindow.swift": [1671087040, 0]
