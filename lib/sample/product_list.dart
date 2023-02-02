@@ -61,4 +61,13 @@ List<Product> products = [
     price: 120000,
     stock: 4,
   ),
+   Product(
+    id: 7,
+    image:
+        "http://stargear.vn/uploaded_files/sanpham/36166745_B%C3%A0n%20ph%C3%ADm%20c%C6%A1%20AKKO%203098B%20Multi-modes%20Black%20Gold%201.jpg",
+    name: "Akko 3098B",
+    sku: "AKKO 3098B",
+    price: 120000,
+    stock: 4,
+  ),
 ];

@@ -1,13 +1,19 @@
 import 'package:flutter/material.dart';
-import 'package:pos/extensions/color_extension.dart';
+import 'package:pos/extensions/hex_color.dart';
 
-Color kDefaultBackground = HexColor.fromHex('#f2f3fa');
+class MainColors {
+  static Color kDefaultBackground = HexColor('#f2f3fa');
 
-Color kDefaultText = HexColor.fromHex("#253645");
-Color kDefaultTextSubdued = HexColor.fromHex("#8B8C99");
-Color kSecondaryTextSubdued = HexColor.fromHex("#1AA7E8");
+  static Color kDefaultText = HexColor("#253645");
+  static Color kDefaultTextSubdued = HexColor("#8B8C99");
+  static Color kSecondaryTextSubdued = HexColor("#1AA7E8");
 
-Color kDefaultLink =  HexColor.fromHex('#2563EB');
-Color kDefaultBlue =  HexColor.fromHex('#1D20BC');
+  static Color kDefaultBlack = HexColor("#292D32");
+  static Color kDefaultLink = HexColor('#2563EB');
+  static Color kDefaultBlue = HexColor('#1D20BC');
+
+  static Color kDefaultInputBorder = HexColor('#E6E6F3'); 
+}
+
 
 const kDefaultHorizontalPadding = 20.0;

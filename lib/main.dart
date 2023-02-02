@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos/constants.dart';
-import 'package:pos/screens/home/home_screen.dart';
+import 'package:pos/screens/home/pos_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -14,10 +14,10 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'POS Demo',
       theme: ThemeData(
-        textTheme: Theme.of(context).textTheme.apply(bodyColor: kDefaultBlue),
+        textTheme: Theme.of(context).textTheme.apply(bodyColor: MainColors.kDefaultBlue),
         primarySwatch: Colors.blue,
       ),
-      home: const HomeScreen(),
+      home: const POSScreen(),
     );
   }
 }
