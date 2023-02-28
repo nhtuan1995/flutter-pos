@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_slidable/flutter_slidable.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+
 import 'package:pos/components/button/full_width_button.dart';
 import 'package:pos/components/scaffold/main_scaffold.dart';
 import 'package:pos/components/scaffold/position_bottom_component.dart';
