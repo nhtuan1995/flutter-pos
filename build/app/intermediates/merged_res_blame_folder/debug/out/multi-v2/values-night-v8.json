@@ -1,10 +1,10 @@
 {
     "logs": [
         {
-            "outputFile": "/Users/nguyenhuutuan/flutter-test/shopping-app/pos_test/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
+            "outputFile": "/Users/nguyenhuutuan/Flutter/pos/flutter-pos/build/app/intermediates/incremental/mergeDebugResources/merged.dir/values-night-v8/values-night-v8.xml",
             "map": [
                 {
-                    "source": "/Users/nguyenhuutuan/flutter-test/shopping-app/pos_test/android/app/src/main/res/values-night/styles.xml",
+                    "source": "/Users/nguyenhuutuan/Flutter/pos/flutter-pos/android/app/src/main/res/values-night/styles.xml",
                     "from": {
                         "startLines": "3,14",
                         "startColumns": "4,4",

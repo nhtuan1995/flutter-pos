@@ -1,7 +1,6 @@
 class Product {
   final String? image, name, sku;
   final int? id, price, stock;
-
   Product({this.id, this.image, this.name, this.sku, this.price, this.stock});
 }
 
@@ -20,7 +19,7 @@ List<Product> products = [
     image:
         "https://img.tgdd.vn/imgt/f_webp,fit_outside,quality_75,s_300x300/https://cdn.tgdd.vn/Products/Images/42/240259/s16/iPhone-14-thumb-topzone%20(2)-650x650.png",
     name:
-        "Iphone 14 pro nhưng không max, bộ nhớ siêu khủng, 2 sim và rất nhiều thẻ nhớ, nói chung là dùng thì bao phê !!!!",
+        "Iphone 14 pro nhưng không max, bộ nhớ siêu khủng, 2 sim và rất nhiều thẻ nhớ, nói chung là dùng thì bao phê !!!! Thích thì mình cũng có thể dùng tiếp nhuwgn àm dùng đến đây là đủ rồi ! ",
     sku: "IP-14-PM",
     price: 25000000,
     stock: 3,
@@ -61,7 +60,7 @@ List<Product> products = [
     price: 120000,
     stock: 4,
   ),
-   Product(
+  Product(
     id: 7,
     image:
         "http://stargear.vn/uploaded_files/sanpham/36166745_B%C3%A0n%20ph%C3%ADm%20c%C6%A1%20AKKO%203098B%20Multi-modes%20Black%20Gold%201.jpg",

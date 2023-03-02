@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:pos/constants.dart';
-import 'package:pos/screens/home/pos_screen.dart';
+import 'package:pos/screens/pos/pos_screen.dart';
 
 void main() {
   runApp(const MyApp());
