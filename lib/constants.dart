@@ -8,6 +8,7 @@ class MainColors {
   static Color kDefaultTextSubdued = HexColor("#8B8C99");
   static Color kSecondaryTextSubdued = HexColor("#1AA7E8");
 
+
   static Color kDefaultBlack = HexColor("#292D32");
   static Color kDefaultLink = HexColor('#2563EB');
   static Color kDefaultBlue = HexColor('#1D20BC');

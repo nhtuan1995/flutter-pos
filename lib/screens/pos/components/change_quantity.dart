@@ -7,83 +7,35 @@ import 'package:pos/constants.dart';
 //     Key? key,
 //   }) : super(key: key);
 
-//   @override
-//   Widget build(BuildContext context) {
-//     return Row(
-//       children: <Widget>[
-//         SizedBox(
-//           width: 24,
-//           height: 24,
-//           child: OutlinedButton(
-//             onPressed: () {},
-//             style: ButtonStyle(
-//               padding: MaterialStateProperty.all(
-//                 const EdgeInsets.all(0),
-//               ),
-//             ),
-//             child: Icon(
-//               Icons.remove,
-//               color: MainColors.kDefaultBlue,
-//               size: 16,
-//             ),
-//           ),
-//         ),
-//         const SizedBox(width: 8),
-//         Container(
-//           height: 24,
-//           padding: EdgeInsets.zero,
-//           child: const Center(
-//             child: Text('10000'),
-//           ),
-//         ),
-//         const SizedBox(width: 8),
-//         SizedBox(
-//           width: 24,
-//           height: 24,
-//           child: OutlinedButton(
-//             onPressed: () {},
-//             style: ButtonStyle(
-//               padding: MaterialStateProperty.all(
-//                 const EdgeInsets.all(0),
-//               ),
-//             ),
-//             child: Icon(
-//               Icons.add,
-//               color: MainColors.kDefaultBlue,
-//               size: 16,
-//             ),
-//           ),
-//         ),
-//       ],
-//     );
-//   }
-// }
-
 class ChangeQuantity extends StatefulWidget {
-  const ChangeQuantity({super.key});
+  final Function onChange;
+  const ChangeQuantity({super.key, required this.onChange});
 
   @override
   State<ChangeQuantity> createState() => _ChangeQuantityState();
 }
 
 class _ChangeQuantityState extends State<ChangeQuantity> {
-  int _count = 0;
+  int _count = 1;
 
-  void increase (){
+  void increase() {
     setState(() {
       _count++;
     });
+    widget.onChange(_count);
   }
 
-   void decrease (){
-    if(_count == 0 ){
+  void decrease() {
+    if (_count == 0) {
       setState(() {
         _count = 0;
       });
+      widget.onChange(_count);
       return;
     }
     setState(() {
       _count--;
+      widget.onChange(_count);
     });
   }
 
@@ -92,8 +44,8 @@ class _ChangeQuantityState extends State<ChangeQuantity> {
     return Row(
       children: <Widget>[
         SizedBox(
-          width: 24,
-          height: 24,
+          width: 32,
+          height: 32,
           child: OutlinedButton(
             onPressed: () => decrease(),
             style: ButtonStyle(
@@ -108,10 +60,9 @@ class _ChangeQuantityState extends State<ChangeQuantity> {
             ),
           ),
         ),
-        const SizedBox(width: 8),
         Container(
-          height: 24,
-          padding: EdgeInsets.zero,
+          height: 32,
+          padding: const EdgeInsets.symmetric(horizontal: 12),
           child: Center(
             child: Text(_count.toString(),
                 style: TextStyle(
@@ -119,10 +70,9 @@ class _ChangeQuantityState extends State<ChangeQuantity> {
                 )),
           ),
         ),
-        const SizedBox(width: 8),
         SizedBox(
-          width: 24,
-          height: 24,
+          width: 32,
+          height: 32,
           child: OutlinedButton(
             onPressed: () => increase(),
             style: ButtonStyle(

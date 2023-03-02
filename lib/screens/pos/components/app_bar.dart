@@ -16,7 +16,9 @@ AppBar buildAppBar(context, String type) {
         style: const ButtonStyle(
           backgroundColor: MaterialStatePropertyAll<Color>(Colors.red),
         ),
-        icon: SvgPicture.asset("assets/icons/close_icon.svg"),
+        icon: type == 'search'
+            ? SvgPicture.asset("assets/icons/arrow_left.svg")
+            : SvgPicture.asset("assets/icons/close_icon.svg"),
         onPressed: () async {
           await Navigator.push(
             // redirect màn !
@@ -28,55 +30,76 @@ AppBar buildAppBar(context, String type) {
         },
       ),
     ),
-    title: SizedBox(
-        width: 295,
+    title: Expanded(
+      child: Container(
         height: 36,
-        child: Container(
-          decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(6),
-            color: Colors.white,
-          ),
-          child: Row(
-            children: [
-              Text(type, style: TextStyle(color: Colors.black)),
-              const SizedBox(width: 14),
-              SvgPicture.asset("assets/icons/search.svg",
-                  width: 16, height: 16),
-              const SizedBox(width: 10),
-              Expanded(
-                child: type == 'search'
-                    ? TextField(
-                        keyboardType: TextInputType.text,
-                        decoration: InputDecoration(
-                          hintText: "Thêm sản phẩm",
-                          border: InputBorder.none,
-                          isDense: true, // tránh nó bị nhảy xuống dòng
-                        ),
-                        maxLines: 1,
-                      )
-                    : TextButton(
-                        onPressed: () async {
-                          await Navigator.push(
-                            // redirect màn !
-                            context,
-                            MaterialPageRoute(
-                              builder: (context) => const ProductSearch(),
-                            ),
-                          );
-                        },
-                        child: Text(
-                          'Thêm sản phẩm',
-                        ),
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(6),
+          color: Colors.white,
+        ),
+        child: Row(
+          children: [
+            const SizedBox(width: 14),
+            SvgPicture.asset("assets/icons/search.svg", width: 16, height: 16),
+            const SizedBox(width: 10),
+            Expanded(
+              child: type == 'search'
+                  ? TextField(
+                      keyboardType: TextInputType.text,
+                      decoration: const InputDecoration(
+                        hintText: "Nhập tên, SKU...",
+                        border: InputBorder.none,
+                        isDense: true, // tránh nó bị nhảy xuống dòng
                       ),
-              ),
-              const SizedBox(width: 10),
-              IconButton(
-                onPressed: () {},
-                icon: SvgPicture.asset("assets/icons/input_barcode.svg"),
-              ),
-              const SizedBox(width: 10),
-            ],
-          ),
-        )),
+                      style: TextStyle(
+                        fontSize: 14,
+                        color: MainColors.kDefaultText,
+                      ),
+                      maxLines: 1,
+                    )
+                  : TextButton(
+                      onPressed: () async {
+                        await Navigator.push(
+                          // redirect màn !
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => const ProductSearch(),
+                          ),
+                        );
+                      },
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Text(
+                            'Thêm sản phẩm',
+                            style: TextStyle(
+                              color: MainColors.kDefaultText,
+                              fontSize: 14,
+                              fontWeight: FontWeight.w400,
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+            ),
+            const SizedBox(width: 10),
+            IconButton(
+              icon: SvgPicture.asset("assets/icons/input_barcode.svg"),
+              onPressed: () {},
+            ),
+            const SizedBox(width: 10),
+          ],
+        ),
+      ),
+    ),
+    actions: [
+      type == 'search'
+          ? IconButton(
+              onPressed: () {},
+              icon: const Icon(Icons.add),
+            )
+          : const SizedBox(width: 0),
+      const SizedBox(width: 10),
+    ],
   );
 }

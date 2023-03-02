@@ -8,12 +8,14 @@ import 'package:pos/components/scaffold/position_bottom_component.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/extensions/screen_size.dart';
+import 'package:pos/providers/pos_provider.dart';
 import 'package:pos/screens/pos/components/app_bar.dart';
 import 'package:pos/screens/pos/payment_screen.dart';
 import 'package:pos/screens/pos/components/customer_button.dart';
+import 'package:provider/provider.dart';
 
 import 'components/payment_info.dart';
-import 'components/product_list.dart';
+import 'components/pos_product_list.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
 
@@ -41,7 +43,7 @@ class POSScreen extends StatelessWidget {
                 ],
               ),
             ),
-
+            Expanded(child: Container()),
             //POSITION BOTTOM
             PositionedBottom(
               children: [
@@ -55,13 +57,17 @@ class POSScreen extends StatelessWidget {
                         style: TextStyle(
                             fontSize: 12, color: MainColors.kDefaultText),
                       ),
-                      Text(
-                        renderPrice(price: 350000),
-                        style: TextStyle(
-                          fontSize: 16,
-                          color: MainColors.kDefaultText,
-                          fontWeight: FontWeight.w600,
-                        ),
+                      Consumer<PosProvider>(
+                        builder: (context, value, child) {
+                          return Text(
+                            renderPrice(price: value.total),
+                            style: TextStyle(
+                              fontSize: 16,
+                              color: MainColors.kDefaultText,
+                              fontWeight: FontWeight.w600,
+                            ),
+                          );
+                        },
                       )
                     ],
                   ),

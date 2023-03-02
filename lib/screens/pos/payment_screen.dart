@@ -7,6 +7,8 @@ import 'package:pos/components/scaffold/position_bottom_component.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/extensions/screen_size.dart';
+import 'package:pos/providers/pos_provider.dart';
+import 'package:provider/provider.dart';
 
 class Payment extends StatelessWidget {
   const Payment({super.key});
@@ -49,14 +51,18 @@ class Payment extends StatelessWidget {
                     ),
                   ),
                   const SizedBox(height: 8),
-                  Text(
-                    renderPrice(price: 3015000),
-                    style: TextStyle(
-                      fontSize: 30,
-                      fontWeight: FontWeight.w500,
-                      color: MainColors.kDefaultBlue,
-                    ),
-                  )
+                  Consumer<PosProvider>(
+                    builder: (context, value, child) {
+                      return Text(
+                        renderPrice(price: value.total),
+                        style: TextStyle(
+                          fontSize: 30,
+                          fontWeight: FontWeight.w500,
+                          color: MainColors.kDefaultBlue,
+                        ),
+                      );
+                    },
+                  ),
                 ],
               ),
             ),
@@ -100,7 +106,7 @@ class Payment extends StatelessWidget {
               // ignore: prefer_const_constructors
               child: FullWidthButton(
                 title: 'Hoàn thành',
-                onPressed: (){},
+                onPressed: () {},
               ),
             ),
           ],
@@ -109,4 +115,3 @@ class Payment extends StatelessWidget {
     );
   }
 }
-
