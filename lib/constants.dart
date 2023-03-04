@@ -13,6 +13,7 @@ class MainColors {
   static Color kDefaultLink = HexColor('#2563EB');
   static Color kDefaultBlue = HexColor('#1D20BC');
 
+  static Color kBlue50 = HexColor('#F2F3F9');
   static Color kDefaultInputBorder = HexColor('#E6E6F3'); 
 }
 

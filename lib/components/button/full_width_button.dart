@@ -15,12 +15,18 @@ class FullWidthButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextButton(
       style: ButtonStyle(
-          backgroundColor:
-              MaterialStateProperty.all(MainColors.kDefaultBlue),
-          padding: MaterialStateProperty.all(
-              const EdgeInsets.all(14))),
+        backgroundColor: MaterialStateProperty.all(MainColors.kDefaultBlue),
+        padding: MaterialStateProperty.all(
+          const EdgeInsets.all(14),
+        ),
+        shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+          RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(50.0),
+          ),
+        ),
+      ),
       onPressed: () => onPressed(),
-      child:  Text(
+      child: Text(
         title,
         style: const TextStyle(
           fontSize: 14,
@@ -30,4 +36,3 @@ class FullWidthButton extends StatelessWidget {
     );
   }
 }
-

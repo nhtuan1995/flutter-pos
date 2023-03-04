@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:pos/components/button/ink_well_button.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/models/product_list.dart';
 import 'package:pos/screens/pos/components/product_groups_action_sheet.dart';
@@ -18,36 +19,34 @@ class SearchProductList extends StatelessWidget {
         ? Column(
             mainAxisSize: MainAxisSize.max,
             children: [
-              Material(
+              InkWellButton(
                 color: Colors.white,
-                child: InkWell(
-                  onTap: () {
-                    showModalBottomSheet<dynamic>(
-                      context: context,
-                      isScrollControlled: true,
-                      backgroundColor: Colors.transparent,
-                      builder: ((context) {
-                        return const ProductGroupsActionSheet();
-                      }),
-                    );
-                  },
-                  child: Container(
-                    padding: const EdgeInsets.symmetric(
-                        horizontal: 24, vertical: 16),
-                    child: Row(
-                      children: [
-                        Text(
-                          "Tất cả loại sản phẩm",
-                          style: TextStyle(
-                            color: MainColors.kDefaultText,
-                            fontWeight: FontWeight.w500,
-                            fontSize: 14,
-                          ),
+                onTap: () {
+                  showModalBottomSheet<dynamic>(
+                    context: context,
+                    isScrollControlled: true,
+                    backgroundColor: Colors.transparent,
+                    builder: ((context) {
+                      return const ProductGroupsActionSheet();
+                    }),
+                  );
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+                  child: Row(
+                    children: [
+                      Text(
+                        "Tất cả loại sản phẩm",
+                        style: TextStyle(
+                          color: MainColors.kDefaultText,
+                          fontWeight: FontWeight.w500,
+                          fontSize: 14,
                         ),
-                        const SizedBox(width: 8),
-                        SvgPicture.asset("assets/icons/angle_down.svg")
-                      ],
-                    ),
+                      ),
+                      const SizedBox(width: 8),
+                      SvgPicture.asset("assets/icons/angle_down.svg")
+                    ],
                   ),
                 ),
               ),

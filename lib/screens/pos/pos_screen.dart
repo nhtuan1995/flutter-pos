@@ -1,3 +1,6 @@
+// ignore: duplicate_ignore
+// ignore_for_file: import_of_legacy_library_into_null_safe, duplicate_ignore
+
 import 'package:flutter/material.dart';
 // ignore: unused_import
 import 'package:flutter_svg/flutter_svg.dart';
@@ -10,12 +13,14 @@ import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/extensions/screen_size.dart';
 import 'package:pos/providers/pos_provider.dart';
 import 'package:pos/screens/pos/components/app_bar.dart';
+import 'package:pos/screens/pos/components/customer_picker.dart';
+import 'package:pos/screens/pos/components/note_button.dart';
 import 'package:pos/screens/pos/payment_screen.dart';
-import 'package:pos/screens/pos/components/customer_button.dart';
 import 'package:provider/provider.dart';
 
 import 'components/payment_info.dart';
 import 'components/pos_product_list.dart';
+// import 'package:custom_switch/custom_switch.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
 
@@ -32,13 +37,16 @@ class POSScreen extends StatelessWidget {
             SingleChildScrollView(
               child: Column(
                 children: const [
-                  CustomerButton(),
                   SizedBox(height: 8),
                   ProductList(),
                   SizedBox(
                     height: 8,
                   ),
                   PaymentInfo(),
+                  SizedBox(height: 8),
+                  CustomerPicker(),
+                  SizedBox(height: 8),
+                  NoteButton(),
                   SizedBox(height: 130),
                 ],
               ),
