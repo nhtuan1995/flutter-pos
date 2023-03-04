@@ -81,12 +81,15 @@ class _CustomerPickerState extends State<CustomerPicker> {
                                       label: "Địa chỉ giao hàng",
                                       hintText: "Vui lòng nhập địa chỉ",
                                     ),
-                                    SizedBox(height: 16,),
+                                    SizedBox(height: 16),
                                     VerticalInput(
                                       label: "Phí giao hàng",
                                       hintText: "Phí trả đối tác",
                                       isNumber: true,
-                                    )
+                                    ),
+                                    // ignore: prefer_const_constructors
+                                    SizedBox(height: 16),
+                                    ShipPayerRadio()
                                   ],
                                 ),
                               ),
@@ -107,10 +110,91 @@ class _CustomerPickerState extends State<CustomerPicker> {
   }
 }
 
+class ShipPayerRadio extends StatefulWidget {
+  const ShipPayerRadio({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  State<ShipPayerRadio> createState() => _ShipPayerRadioState();
+}
+
+enum ShipPayer { buyer, salesman }
+
+class _ShipPayerRadioState extends State<ShipPayerRadio> {
+  ShipPayer _shipPayer = ShipPayer.buyer;
+
+  @override
+  Widget build(BuildContext context) {
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        Text(
+          "Địa chỉ giao hàng",
+          style: TextStyle(
+            color: MainColors.kDefaultText,
+            fontSize: 16,
+            fontWeight: FontWeight.w600,
+          ),
+        ),
+        const SizedBox(
+          height: 8,
+        ),
+        Row(
+          children: [
+            Expanded(
+              child: Row(
+                children: [
+                  Radio(
+                      value: ShipPayer.salesman,
+                      groupValue: _shipPayer,
+                      onChanged: (index) {
+                        setState(() {
+                          _shipPayer = ShipPayer.salesman;
+                        });
+                      }),
+                  Expanded(
+                      child: Text(
+                    'Người bán',
+                    style: TextStyle(color: MainColors.kDefaultText),
+                  ))
+                ],
+              ),
+              flex: 1,
+            ),
+            Expanded(
+              child: Row(
+                children: [
+                  Radio(
+                      value: ShipPayer.buyer,
+                      groupValue: _shipPayer,
+                      onChanged: (index) {
+                        setState(() {
+                          _shipPayer = ShipPayer.buyer;
+                        });
+                      }),
+                  Expanded(
+                      child: Text(
+                    'Người bán',
+                    style: TextStyle(
+                      color: MainColors.kDefaultText,
+                    ),
+                  ))
+                ],
+              ),
+              flex: 1,
+            ),
+          ],
+        )
+      ],
+    );
+  }
+}
+
 class VerticalInput extends StatelessWidget {
   final String label;
   final String? hintText;
-  final bool? isNumber; 
+  final bool? isNumber;
 
   const VerticalInput({
     required this.label,
