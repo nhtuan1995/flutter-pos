@@ -26,6 +26,7 @@ class NoteButton extends StatelessWidget {
           backgroundColor: Colors.transparent,
           builder: ((context) {
             return MainActionSheet(
+              height: 300,
               title: "Ghi chú đơn hàng",
               body: Padding(
                 padding: const EdgeInsets.symmetric(

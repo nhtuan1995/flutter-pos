@@ -7,6 +7,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pos/components/action_sheet/main_action_sheets.dart';
 
 import 'package:pos/components/button/ink_well_button.dart';
+import 'package:pos/components/button/rounded_button.dart';
 import 'package:pos/constants.dart';
 
 // import 'package:custom_switch/custom_switch.dart';
@@ -23,7 +24,7 @@ class CustomerPicker extends StatefulWidget {
 }
 
 class _CustomerPickerState extends State<CustomerPicker> {
-  bool isShip = true;
+  bool isShip = false;
 
   @override
   Widget build(BuildContext context) {
@@ -71,25 +72,36 @@ class _CustomerPickerState extends State<CustomerPicker> {
                           backgroundColor: Colors.transparent,
                           builder: ((context) {
                             return MainActionSheet(
+                              height: 460,
                               title: "Thông tin giao hàng",
                               body: Container(
                                 padding: const EdgeInsets.symmetric(
                                     horizontal: 24, vertical: 16),
                                 child: Column(
-                                  children: const [
-                                    VerticalInput(
+                                  children: [
+                                    const VerticalInput(
                                       label: "Địa chỉ giao hàng",
                                       hintText: "Vui lòng nhập địa chỉ",
                                     ),
-                                    SizedBox(height: 16),
-                                    VerticalInput(
+                                    const SizedBox(height: 16),
+                                    const VerticalInput(
                                       label: "Phí giao hàng",
                                       hintText: "Phí trả đối tác",
                                       isNumber: true,
                                     ),
-                                    // ignore: prefer_const_constructors
-                                    SizedBox(height: 16),
-                                    ShipPayerRadio()
+                                    const SizedBox(height: 16),
+                                    const ShipPayerRadio(),
+                                    const SizedBox(
+                                      height: 16,
+                                    ),
+                                    SizedBox(
+                                      width: double.infinity,
+                                      height: 44,
+                                      child: RoundedButton(
+                                        title: "Lưu lại",
+                                        onPressed: () {},
+                                      ),
+                                    ),
                                   ],
                                 ),
                               ),
@@ -130,7 +142,7 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Địa chỉ giao hàng",
+          "Người trả phí",
           style: TextStyle(
             color: MainColors.kDefaultText,
             fontSize: 16,
@@ -141,9 +153,12 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
           height: 8,
         ),
         Row(
+          mainAxisAlignment: MainAxisAlignment.start,
           children: [
             Expanded(
+              flex: 1,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Radio(
                       value: ShipPayer.salesman,
@@ -160,10 +175,11 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
                   ))
                 ],
               ),
-              flex: 1,
             ),
             Expanded(
+              flex: 1,
               child: Row(
+                mainAxisAlignment: MainAxisAlignment.start,
                 children: [
                   Radio(
                       value: ShipPayer.buyer,
@@ -182,7 +198,6 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
                   ))
                 ],
               ),
-              flex: 1,
             ),
           ],
         )
@@ -209,7 +224,7 @@ class VerticalInput extends StatelessWidget {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
-          "Địa chỉ giao hàng",
+          label,
           style: TextStyle(
             color: MainColors.kDefaultText,
             fontSize: 16,
@@ -220,7 +235,7 @@ class VerticalInput extends StatelessWidget {
           height: 8,
         ),
         Container(
-          height: 56,
+          height: 50,
           padding: const EdgeInsets.symmetric(horizontal: 16),
           decoration: BoxDecoration(
             border: Border.all(color: MainColors.kDefaultInputBorder),

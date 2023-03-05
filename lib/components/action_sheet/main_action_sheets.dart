@@ -6,11 +6,13 @@ import 'package:pos/constants.dart';
 class MainActionSheet extends StatelessWidget {
   final String title;
   final Widget body;
+  final double? height;
 
   const MainActionSheet({
     Key? key,
     required this.body,
     required this.title,
+    this.height = 400,
   }) : super(key: key);
 
   @override
@@ -19,7 +21,7 @@ class MainActionSheet extends StatelessWidget {
       padding:
           EdgeInsets.only(bottom: MediaQuery.of(context).viewInsets.bottom),
       child: Container(
-          height: 400,
+          height: height,
           width: MediaQuery.of(context).size.width,
           decoration: const BoxDecoration(
             color: Colors.white,

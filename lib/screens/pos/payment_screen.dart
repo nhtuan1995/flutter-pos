@@ -10,8 +10,17 @@ import 'package:pos/extensions/screen_size.dart';
 import 'package:pos/providers/pos_provider.dart';
 import 'package:provider/provider.dart';
 
-class Payment extends StatelessWidget {
+class Payment extends StatefulWidget {
   const Payment({super.key});
+
+  @override
+  State<Payment> createState() => _PaymentState();
+}
+
+enum PaymentTypes { single, multi }
+
+class _PaymentState extends State<Payment> {
+  PaymentTypes _paymentTypes = PaymentTypes.single;
 
   @override
   Widget build(BuildContext context) {
@@ -25,7 +34,7 @@ class Payment extends StatelessWidget {
           ),
         ),
         title: Text(
-          'Thanh toán',
+          'Xác nhận thanh toán',
           style: TextStyle(
             fontSize: 18,
             color: MainColors.kDefaultBlue,
@@ -39,18 +48,9 @@ class Payment extends StatelessWidget {
             Container(
               padding: const EdgeInsets.all(24),
               width: screenSize(context).width,
-              color: MainColors.kDefaultBackground,
+              color: Colors.white,
               child: Column(
                 children: [
-                  Text(
-                    'Tổng khách cần trả',
-                    style: TextStyle(
-                      fontSize: 14,
-                      fontWeight: FontWeight.w600,
-                      color: MainColors.kDefaultText,
-                    ),
-                  ),
-                  const SizedBox(height: 8),
                   Consumer<PosProvider>(
                     builder: (context, value, child) {
                       return Text(
@@ -66,34 +66,98 @@ class Payment extends StatelessWidget {
                 ],
               ),
             ),
+            const SizedBox(
+              height: 8,
+            ),
             Container(
               color: Colors.white,
               padding: const EdgeInsets.symmetric(horizontal: 24),
               child: Column(
                 children: [
-                  SizedBox(
-                    height: 36,
-                    child: Row(
-                      children: [
-                        Text(
-                          'Khách thanh toán',
-                          style: TextStyle(
-                              fontSize: 14,
-                              color: MainColors.kDefaultText,
-                              fontWeight: FontWeight.w600),
+                  const SizedBox(
+                    height: 24,
+                  ),
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          height: 36,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: MainColors.kDefaultInputBorder),
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Row(
+                            children: [
+                              Radio(
+                                  activeColor: MainColors.kDefaultBlue,
+                                  value: PaymentTypes.single,
+                                  groupValue: _paymentTypes,
+                                  onChanged: (index) {
+                                    setState(() {
+                                      _paymentTypes = PaymentTypes.single;
+                                    });
+                                  }),
+                              Text(
+                                'Một hình thức',
+                                style: TextStyle(
+                                  color: _paymentTypes == PaymentTypes.multi ? MainColors.kDefaultText : MainColors.kDefaultBlue,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )
+                            ],
+                          ),
                         ),
-                      ],
-                    ),
+                      ),
+                      const SizedBox(
+                        width: 24,
+                      ),
+                      Expanded(
+                        flex: 1,
+                        child: Container(
+                          width: 151,
+                          height: 36,
+                          decoration: BoxDecoration(
+                              border: Border.all(
+                                  color: MainColors.kDefaultInputBorder),
+                              borderRadius: BorderRadius.circular(50)),
+                          child: Row(
+                            children: [
+                              Radio(
+                                  activeColor: MainColors.kDefaultBlue,
+                                  value: PaymentTypes.multi,
+                                  groupValue: _paymentTypes,
+                                  onChanged: (index) {
+                                    setState(() {
+                                      _paymentTypes = PaymentTypes.multi;
+                                    });
+                                  }),
+                              Text(
+                                'Nhiều hình thức',
+                                style: TextStyle(
+                                  color: _paymentTypes == PaymentTypes.single ? MainColors.kDefaultText : MainColors.kDefaultBlue,
+                                  fontSize: 12,
+                                  fontWeight: FontWeight.w500,
+                                ),
+                              )
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
                   ),
-                  const InputLine(
-                    title: "Tiền mặt",
-                  ),
-                  const InputLine(
-                    title: "Quẹt thẻ",
-                  ),
-                  const InputLine(
-                    title: "Chuyển khoản",
-                  ),
+                  
+                  // const InputLine(
+                  //   title: "Tiền mặt",
+                  // ),
+                  // const InputLine(
+                  //   title: "Quẹt thẻ",
+                  // ),
+                  // const InputLine(
+                  //   title: "Chuyển khoản",
+                  // ),
                 ],
               ),
             ),

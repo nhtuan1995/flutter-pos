@@ -34,6 +34,7 @@ class _DiscountActionSheetState extends State<DiscountActionSheet> {
   Widget build(BuildContext context) {
     final posProvider = Provider.of<PosProvider>(context);
     return MainActionSheet(
+      height: 300,
       title: "Giảm giá",
       body: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 24.0),
