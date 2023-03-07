@@ -3,22 +3,21 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pos/components/button/ink_well_button.dart';
 import 'package:pos/constants.dart';
 // ignore: import_of_legacy_library_into_null_safe
-import 'package:pos/models/product_groups.dart';
 
-class ProductGroupItem extends StatefulWidget {
-  final List<ProductGroups> productGroups;
+class SelectOptionsTick extends StatefulWidget {
+  final List<dynamic> data;
   final int index;
-  const ProductGroupItem({
+  const SelectOptionsTick({
     Key? key,
-    required this.productGroups,
+    required this.data,
     required this.index,
   }) : super(key: key);
 
   @override
-  State<ProductGroupItem> createState() => _ProductGroupItemState();
+  State<SelectOptionsTick> createState() => _SelectOptionsTickState();
 }
 
-class _ProductGroupItemState extends State<ProductGroupItem> {
+class _SelectOptionsTickState extends State<SelectOptionsTick> {
   bool _isSelected = false;
 
   void handleSelectGroup() {
@@ -41,14 +40,13 @@ class _ProductGroupItemState extends State<ProductGroupItem> {
           ),
         )),
         padding: const EdgeInsets.symmetric(
-          horizontal: 24,
           vertical: 16,
         ),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Text(
-              widget.productGroups[widget.index].name!,
+              widget.data[widget.index].name!,
               style: TextStyle(
                 color: MainColors.kDefaultText,
                 fontSize: 14,

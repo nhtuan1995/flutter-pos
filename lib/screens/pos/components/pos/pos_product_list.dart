@@ -5,7 +5,7 @@ import 'package:flutter_slidable/flutter_slidable.dart';
 
 // import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/models/product_list.dart';
-import 'package:pos/screens/pos/components/pos_product_item.dart';
+import 'package:pos/screens/pos/components/pos/pos_product_item.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
 

@@ -10,7 +10,7 @@
 		</data>
 		<key>flutter_assets/AssetManifest.json</key>
 		<data>
-		Gq6ECyyqglbI7Dvkzi9MagD/lgY=
+		KLnKKhiw3NkoMjoxFjSc4POSRzE=
 		</data>
 		<key>flutter_assets/FontManifest.json</key>
 		<data>
@@ -18,7 +18,7 @@
 		</data>
 		<key>flutter_assets/NOTICES.Z</key>
 		<data>
-		iqf+6fvksPrr+PnukI2hvPOfqf4=
+		uUXPOmZwFMupKPAQKAsv+C8mp2Y=
 		</data>
 		<key>flutter_assets/assets/icons/add_to_cart.svg</key>
 		<data>
@@ -68,6 +68,22 @@
 		<data>
 		20ZnHZmRHMFdqVj97FtlNe54H4Y=
 		</data>
+		<key>flutter_assets/assets/icons/payment_card_icon.svg</key>
+		<data>
+		VeY64EOoAOGBWUG1B9Y0Q0If8EM=
+		</data>
+		<key>flutter_assets/assets/icons/payment_cash_icon.svg</key>
+		<data>
+		3e6VgeJ6kAXPeWGRwr9gXyzbmPQ=
+		</data>
+		<key>flutter_assets/assets/icons/payment_debt_icon.svg</key>
+		<data>
+		am+GcCT3WvpoxyJ1VrpS9L8XpPU=
+		</data>
+		<key>flutter_assets/assets/icons/payment_transfer_icon.svg</key>
+		<data>
+		MgcD/fCoHV17xqYHWFaR5FIwkww=
+		</data>
 		<key>flutter_assets/assets/icons/search.svg</key>
 		<data>
 		22RH07V10N6jXNKnEA/ASVh3yDA=
@@ -90,7 +106,7 @@
 		</data>
 		<key>flutter_assets/kernel_blob.bin</key>
 		<data>
-		rlGvL+nQTlkQLULJRfQ/c04ILyY=
+		+laDkZWpd4iuW2X33tcdCXA+qsY=
 		</data>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>
 		<data>
@@ -111,7 +127,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			62B25ElrLmBhAsadcWbiauRPrQoKctTEGKdjjTv4PjE=
+			PvhdpZOzF6boRofE/EBia/nwwpcjFhWzQvB8dteDIns=
 			</data>
 		</dict>
 		<key>flutter_assets/FontManifest.json</key>
@@ -125,7 +141,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			4tQ5H41CDWyt7Lji95QZpNVytH4k+vH/2hU2MVIoocE=
+			GzOmxcPKarLqBsWgp5gXzKaFAEXql+XC7NfDQPm7B3M=
 			</data>
 		</dict>
 		<key>flutter_assets/assets/icons/add_to_cart.svg</key>
@@ -212,6 +228,34 @@
 			Grg/ZaZIdeuFswclE6s8an8KeCZNsSkBskU2/OuPUVw=
 			</data>
 		</dict>
+		<key>flutter_assets/assets/icons/payment_card_icon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			+nZqADSXtZg5/u1Z/I7FwLq9qhfxJnyUHtBa0enH7Nw=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/payment_cash_icon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			mvDEh2vWu4O2jlHmRgWlqOgZq7wM28VsoNxpUXoSKUU=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/payment_debt_icon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			rbzAEHs1QwZI2E3GxOrIufYLEstJVQfJ1MfD6ZfHFR0=
+			</data>
+		</dict>
+		<key>flutter_assets/assets/icons/payment_transfer_icon.svg</key>
+		<dict>
+			<key>hash2</key>
+			<data>
+			cXlrv2GDOSwybHEXf56bpyaAyOuGZ81WkEQMw3C6Rbg=
+			</data>
+		</dict>
 		<key>flutter_assets/assets/icons/search.svg</key>
 		<dict>
 			<key>hash2</key>
@@ -251,7 +295,7 @@
 		<dict>
 			<key>hash2</key>
 			<data>
-			9iK4RwSCXcQ66vxQVJyWjop6tWEQh67wPzJONY4mH3Y=
+			SvLUNwKOha1UlmcnI6XMdYDDnYdS10Pc9pro6mvCKTE=
 			</data>
 		</dict>
 		<key>flutter_assets/packages/cupertino_icons/assets/CupertinoIcons.ttf</key>

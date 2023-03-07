@@ -4,7 +4,7 @@ import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/extensions/screen_size.dart';
 import 'package:pos/providers/pos_provider.dart';
 import 'package:pos/models/product_list.dart';
-import 'package:pos/screens/pos/components/change_quantity.dart';
+import 'package:pos/screens/pos/components/pos/change_quantity.dart';
 import 'package:provider/provider.dart';
 
 // ignore: import_of_legacy_library_into_null_safe

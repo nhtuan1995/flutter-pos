@@ -8,7 +8,9 @@ import 'package:pos/components/action_sheet/main_action_sheets.dart';
 
 import 'package:pos/components/button/ink_well_button.dart';
 import 'package:pos/components/button/rounded_button.dart';
+import 'package:pos/components/input/vertical_input.dart';
 import 'package:pos/constants.dart';
+import 'package:pos/screens/pos/customer_search.dart';
 
 // import 'package:custom_switch/custom_switch.dart';
 
@@ -40,7 +42,18 @@ class _CustomerPickerState extends State<CustomerPicker> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             InkWellButton(
-              onTap: () {},
+              onTap: () async {
+                await Navigator.push(
+                  // redirect màn !
+                  context,
+                  MaterialPageRoute(
+                    builder: (context) {
+                      // if(type=='search'){}
+                      return const CustomerSearch();
+                    },
+                  ),
+                );
+              },
               child: Row(
                 children: [
                   SvgPicture.asset("assets/icons/user.svg"),
@@ -170,7 +183,7 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
                       }),
                   Expanded(
                       child: Text(
-                    'Người bán',
+                    'Người mua',
                     style: TextStyle(color: MainColors.kDefaultText),
                   ))
                 ],
@@ -200,54 +213,6 @@ class _ShipPayerRadioState extends State<ShipPayerRadio> {
               ),
             ),
           ],
-        )
-      ],
-    );
-  }
-}
-
-class VerticalInput extends StatelessWidget {
-  final String label;
-  final String? hintText;
-  final bool? isNumber;
-
-  const VerticalInput({
-    required this.label,
-    this.hintText,
-    this.isNumber = false,
-    Key? key,
-  }) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          label,
-          style: TextStyle(
-            color: MainColors.kDefaultText,
-            fontSize: 16,
-            fontWeight: FontWeight.w600,
-          ),
-        ),
-        const SizedBox(
-          height: 8,
-        ),
-        Container(
-          height: 50,
-          padding: const EdgeInsets.symmetric(horizontal: 16),
-          decoration: BoxDecoration(
-            border: Border.all(color: MainColors.kDefaultInputBorder),
-            borderRadius: BorderRadius.circular(6),
-          ),
-          child: TextField(
-            keyboardType: isNumber! ? TextInputType.number : TextInputType.text,
-            decoration: InputDecoration(
-              border: InputBorder.none,
-              hintText: hintText,
-            ),
-          ),
         )
       ],
     );

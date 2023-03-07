@@ -3,8 +3,8 @@ import 'package:flutter_svg/svg.dart';
 import 'package:pos/components/button/ink_well_button.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/models/product_list.dart';
-import 'package:pos/screens/pos/components/product_groups_action_sheet.dart';
-import 'package:pos/screens/pos/components/search_product_item.dart';
+import 'package:pos/screens/pos/components/product_search/product_groups_action_sheet.dart';
+import 'package:pos/screens/pos/components/product_search/search_product_item.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
 

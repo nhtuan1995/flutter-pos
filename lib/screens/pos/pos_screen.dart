@@ -13,13 +13,13 @@ import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/extensions/screen_size.dart';
 import 'package:pos/providers/pos_provider.dart';
 import 'package:pos/screens/pos/components/app_bar.dart';
-import 'package:pos/screens/pos/components/customer_picker.dart';
-import 'package:pos/screens/pos/components/note_button.dart';
+import 'package:pos/screens/pos/components/pos/customer_picker.dart';
+import 'package:pos/screens/pos/components/pos/note_button.dart';
+import 'package:pos/screens/pos/components/pos/pos_product_list.dart';
 import 'package:pos/screens/pos/payment_screen.dart';
 import 'package:provider/provider.dart';
 
-import 'components/payment_info.dart';
-import 'components/pos_product_list.dart';
+import 'components/pos/payment_info.dart';
 // import 'package:custom_switch/custom_switch.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
@@ -31,7 +31,7 @@ class POSScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return MainScaffold(
         scaffoldColor: MainColors.kDefaultBackground,
-        appBar: buildAppBar(context, 'pos'),
+        appBar: buildAppBar(context, 'pos', (){}),
         body: Stack(
           children: [
             SingleChildScrollView(

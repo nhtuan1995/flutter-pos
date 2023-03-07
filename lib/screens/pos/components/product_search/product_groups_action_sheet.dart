@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:pos/constants.dart';
-import 'package:pos/screens/pos/components/product_groups_item.dart';
+import 'package:pos/components/input/select_options_tick.dart';
 // ignore: import_of_legacy_library_into_null_safe
 import 'package:pos/models/product_groups.dart';
 
@@ -13,7 +13,7 @@ class ProductGroupsActionSheet extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-        height: 400,
+        height: MediaQuery.of(context).size.height - 87,
         width: MediaQuery.of(context).size.width,
         decoration: const BoxDecoration(
           color: Colors.white,
@@ -66,8 +66,8 @@ class ProductGroupsActionSheet extends StatelessWidget {
                 // physics: const ClampingScrollPhysics(),
                 itemCount: productGroups.length,
                 itemBuilder: (context, index) {
-                  return ProductGroupItem(
-                    productGroups: productGroups,
+                  return SelectOptionsTick(
+                    data: productGroups,
                     index: index,
                   );
                 },

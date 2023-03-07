@@ -5,7 +5,7 @@ import 'package:pos/components/button/ink_well_button.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/extensions/render_currency.dart';
 import 'package:pos/providers/pos_provider.dart';
-import 'package:pos/screens/pos/components/discount_action_sheet.dart';
+import 'package:pos/screens/pos/components/pos/discount_action_sheet.dart';
 import 'package:provider/provider.dart';
 
 // ignore: import_of_legacy_library_into_null_safe

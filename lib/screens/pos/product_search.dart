@@ -8,10 +8,8 @@ import 'package:pos/components/scaffold/position_bottom_component.dart';
 import 'package:pos/constants.dart';
 import 'package:pos/extensions/screen_size.dart';
 import 'package:pos/screens/pos/components/app_bar.dart';
-import 'package:pos/screens/pos/payment_screen.dart';
-
-// import 'components/payment_info.dart';
-import 'components/search_product_list.dart';
+import 'package:pos/screens/pos/components/product_search/search_product_list.dart';
+import 'package:pos/screens/pos/pos_screen.dart';
 
 // ignore: import_of_legacy_library_into_null_safe
 
@@ -22,7 +20,7 @@ class ProductSearch extends StatelessWidget {
   Widget build(BuildContext context) {
     return MainScaffold(
         scaffoldColor: MainColors.kDefaultBackground,
-        appBar: buildAppBar(context, 'search'),
+        appBar: buildAppBar(context, 'search', (){}),
         body: Stack(
           children: [
             SingleChildScrollView(
@@ -46,7 +44,7 @@ class ProductSearch extends StatelessWidget {
                         // redirect màn !
                         context,
                         MaterialPageRoute(
-                          builder: (context) => const Payment(),
+                          builder: (context) => const POSScreen(),
                         ),
                       );
                     },
